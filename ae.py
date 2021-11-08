@@ -23,7 +23,7 @@ tr_num = int(20e3)
 te_num = int(4e3)
 
 epoch_num = 25
-latent_size = 2
+latent_size = 32
 batch_size = 256
 
 ## loading MNIST data set 
@@ -317,7 +317,7 @@ if do_classifier:
         validation_data=(latent_te, y_test_oh)
     )
 
-    encoding_clf_model.fit()
+    # encoding_clf_model.fit()
 
     dict_loss  = history.history
     loss_tr = dict_loss['loss']

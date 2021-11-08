@@ -18,7 +18,7 @@ tr_num = int(20e3)
 te_num = int(4e3)
 
 epoch_num = 25
-latent_size = 2
+latent_size = 32
 batch_size = 256
 
 ## Seeding
@@ -403,7 +403,7 @@ if do_classifier:
     plt.legend()
     plt.xlabel('epoch')
     plt.ylabel('loss value')
-    plt.title('Classifier Loss-  AE Model')
+    plt.title('Classifier Loss-  CAE Model')
     str_save = 'results/task3_cae_loss_latent%d.png'%(latent_size)
     plt.savefig(str_save)
     plt.show()
@@ -415,7 +415,8 @@ if do_classifier:
     plt.legend()
     plt.xlabel('epoch')
     plt.ylabel('acc value')
-    plt.title('Classifier Loss-  AE Model')
+    str_tit = 'Classifier Loss-  CAE Model - train acc=%.2f -- test acc=%.2f '%(acc_tr[-1], acc_te[-1])
+    plt.title(str_tit)
     str_save = 'results/task3_cae_acc_latent%d.png'%(latent_size)
     plt.savefig(str_save)
     plt.show()
